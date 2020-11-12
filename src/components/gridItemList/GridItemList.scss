@@ -1,0 +1,35 @@
+@import "../../shared/variables.scss";
+
+.fields {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  p {
+    color: black;
+  }
+
+}
+
+.actions-list {
+  display: flex;
+
+  p {
+    cursor: pointer;
+    color: $primary-color;
+    max-width: 85%;
+  }
+
+  p:hover {
+    text-decoration: underline;
+  }
+
+  span {
+    margin: 16px;
+  }  
+
+  }
+
+  
+  
+  

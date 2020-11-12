@@ -1,0 +1,17 @@
+@import "../../shared/variables.scss";
+
+.grid {
+    margin-top: 3em;
+  }
+  
+  .titles {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    font-weight: bold;
+
+    p {
+      color: $primary-color;
+      font-size: 19px;
+    }
+  }

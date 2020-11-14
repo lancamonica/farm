@@ -1,7 +1,6 @@
 import React from 'react';
-import Dialog from 'material-ui/Dialog';
+import { Dialog } from 'material-ui';
 import FlatButton from 'material-ui/FlatButton';
-import RaisedButton from 'material-ui/RaisedButton';
 
 
 function Modal({ 
@@ -14,15 +13,15 @@ function Modal({
 
   const actions = [
     <FlatButton
-      label="Cancelar"
-      primary={true}
-      onClick={actionCancel}
-    />,
-    <FlatButton
       label="Salvar"
       primary={true}
       keyboardFocused={true}
       onClick={actionSubmit}
+    />,
+    <FlatButton
+      label="Cancelar"
+      primary={true}
+      onClick={actionCancel}
     />,
   ];
 
@@ -34,7 +33,9 @@ function Modal({
       open={isOpen}
       onRequestClose={actionCancel}
     >
-      {children}
+      <div>
+        {children}
+      </div>
     </Dialog>
   );
 } 

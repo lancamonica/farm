@@ -29,8 +29,8 @@ function DrawerMenu({children}) {
                 open={isOpenDrawer}
                 onRequestChange={() => setIsOpenDrawer(false)}
                 >
-                <MenuItem onClick={() => {}}>Menu Item</MenuItem>
-                <MenuItem onClick={() => {}}>Menu Item 2</MenuItem>
+                <MenuItem onClick={() => {}}>Fazenda</MenuItem>
+                <MenuItem onClick={() => {}}>Lote</MenuItem>
                 <MenuItem onClick={() => {}}>Menu Item 3</MenuItem>
             </Drawer>
             {children}

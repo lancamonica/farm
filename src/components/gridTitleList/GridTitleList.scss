@@ -10,6 +10,10 @@
     grid-template-columns: 1fr 1fr 1fr;
     font-weight: bold;
 
+    &.four {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
     p {
       color: $primary-color;
       font-size: 19px;

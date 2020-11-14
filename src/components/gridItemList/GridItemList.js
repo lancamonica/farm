@@ -5,10 +5,11 @@ import './GridItemList.scss'
 const GridItemList = ({
   actions = [],
   fields = [],
+  items = 3
 }) => {
   return (
     <>
-      <div className={"fields"}>
+      <div className={items === 3 ? "fields" : "fields four"}>
         { fields.map(field => <p>{field}</p>) }
         <div className={"actions-list"}>
           {

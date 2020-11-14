@@ -5,6 +5,10 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 
+  &.four {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
   p {
     color: black;
   }

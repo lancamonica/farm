@@ -4,12 +4,13 @@ import './GridTitleList.scss'
 
 const GridTitleList = ({
   titles = [],
-  children
+  children,
+  items = 3
 }) => {
   return (
     <>
       <div className="grid">
-        <div className={"titles"}>
+        <div className={items === 3 ? "titles" : "titles four"}>
           { titles.map(title => <p>{title}</p>) }
           <p>Ações</p>
         </div>

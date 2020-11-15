@@ -1,10 +1,5 @@
-import React from 'react';
-
+// style
 import './Footer.css';
-import face from '../../icons/facebook.png';
-import twitter from '../../icons/twitter.png'
-import linkedin from '../../icons/linkedin.png'
-
 
 function Footer() {
     return (

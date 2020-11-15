@@ -1,4 +1,4 @@
-import React from 'react';
+// style
 import './ActionButton.scss';
 
 const ActionButton = ({

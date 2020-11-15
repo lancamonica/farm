@@ -1,3 +1,4 @@
+// internal
 import api from "./api";
 
 export const createFarm = async(data) => (await api.post("/farms", data));

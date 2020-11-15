@@ -1,4 +1,4 @@
-import React from 'react';
+// external
 import { Dialog } from 'material-ui';
 import FlatButton from 'material-ui/FlatButton';
 

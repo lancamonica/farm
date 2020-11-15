@@ -1,26 +1,16 @@
-import './Farm.scss';
+// internal
 import Footer from '../../components/footer/Footer';
 import ActionButton from '../../components/button/ActionButton';
 import GridItemList from '../../components/gridItemList/GridItemList';
 import GridTitleList from '../../components/gridTitleList/GridTitleList';
 import Modal from '../../components/modal/Modal';
+import { createFarm, listFarms, getByIdFarm, updateFarm, deleteFarm } from '../../services/farm'
+// external 
 import { useState, useEffect } from 'react';
 import { TextField } from 'material-ui';
-import { createFarm, listFarms, getByIdFarm, updateFarm, deleteFarm } from '../../services/farm'
+// style
+import './Farm.scss';
 
-const lives = [
-  {
-    "_id": "5fa87303947db3002a070d56",
-    "name": "afsdfasdfasdfasdf",
-    "area": 55,
-  },
-
-  {
-    "_id": "45544545454454545454",
-    "name": "trouxa",
-    "area": 5,
-  }
-]
 
 
 function Farm() {

@@ -1,3 +1,8 @@
+// external 
+import SelectField from 'material-ui/SelectField';
+import MenuItem from 'material-ui/MenuItem';
+import { useState, useEffect} from 'react';
+import { TextField } from 'material-ui';
 //internal
 import Footer from '../../components/footer/Footer';
 import ActionButton from '../../components/button/ActionButton';
@@ -6,16 +11,11 @@ import GridTitleList from '../../components/gridTitleList/GridTitleList';
 import Modal from '../../components/modal/Modal';
 import { listLots, deleteLot, createLot, getByIdLot, updateLot } from '../../services/lot';
 import { listFarms } from '../../services/farm';
-// external 
-import SelectField from 'material-ui/SelectField';
-import MenuItem from 'material-ui/MenuItem';
-import { useState, useEffect} from 'react';
-import { TextField } from 'material-ui';
 // style
 import './Lot.scss';
 
 
-function Farm() {
+function Lot() {
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [titleModal, setTitleModal] = useState("Cadastro");
   const [lots, setLots] = useState([]);
@@ -56,7 +56,7 @@ function Farm() {
       setCattleQty("");
       handleListLot();
     }else{
-      alert("Erro ao inserir fazenda!");
+      alert("Erro ao inserir lote!");
     }
   }
 
@@ -79,7 +79,7 @@ function Farm() {
     }
   }
 
-  function handleSubmitForm() {
+  function handleSubmitLot() {
     if(titleModal === "Cadastro") {
       handleCreateLot()
     }else {
@@ -90,15 +90,16 @@ function Farm() {
 
   function getFarmName(farmId) {
     const farmName = farms.find((farm => farm._id === farmId))
+    if(farmName === undefined) return "Fazenda indefinida"
     return farmName.name;
   }
 
-  function openModalNewFarm() {
+  function openModalNewLot() {
     setIsOpenModal(true); 
     setTitleModal("Cadastro");
   }
 
-  async function openModalEditFarm(lotId) {
+  async function openModalEditLot(lotId) {
     setIsOpenModal(true); 
     setTitleModal("Editar");
 
@@ -127,11 +128,11 @@ function Farm() {
 
   return (
     <div className="container-lot">
-      <div className="container-farm-action">
+      <div className="container-lot-action">
         <h1>Lotes</h1>
-        <ActionButton onClick={() => openModalNewFarm()} label={"Novo lote"}/>
+        <ActionButton onClick={() => openModalNewLot()} label={"Novo lote"}/>
       </div>
-      <div className="farm-content">
+      <div className="lot-content">
         <GridTitleList items={4} titles={["Fazenda", "Lote", "Gados"]}>
             {
               lots.map(lot => (
@@ -142,7 +143,7 @@ function Farm() {
                     [
                     {
                         label: "Editar",
-                        action: () => openModalEditFarm(lot._id)
+                        action: () => openModalEditLot(lot._id)
                     },
                     {
                         label: "Excluir",
@@ -156,7 +157,7 @@ function Farm() {
           </GridTitleList>
         </div>  
       <Footer/>
-      <Modal title={titleModal} isOpen={isOpenModal} actionCancel={() => closeModal()} actionSubmit={() => handleSubmitForm()}>
+      <Modal title={titleModal} isOpen={isOpenModal} actionCancel={() => closeModal()} actionSubmit={() => handleSubmitLot()}>
         <div className="text-field-lot">
           <SelectField
             floatingLabelText="Fazenda"
@@ -177,8 +178,8 @@ function Farm() {
             type="text"
             value={lotName}
             style={{
-              width: '90%',
-              marginRigth: 5
+              width: '70%',
+              marginLeft: 20 
             }}
             onChange={(e) => setLotName(e.target.value)}
           />
@@ -202,4 +203,4 @@ function Farm() {
   );
 }
 
-export default Farm;
+export default Lot;

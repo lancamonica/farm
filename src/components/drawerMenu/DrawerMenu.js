@@ -47,6 +47,7 @@ function DrawerMenu({children}) {
                 >
                 <MenuItem onClick={() => redirectRoute("/")}>Fazenda</MenuItem>
                 <MenuItem onClick={() => redirectRoute("/lote")}>Lote</MenuItem>
+                <MenuItem onClick={() => redirectRoute("/calculo-peso")}>Pesagem</MenuItem>
             </Drawer>
             {children}
         </>

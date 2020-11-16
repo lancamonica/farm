@@ -1,4 +1,4 @@
-.container-lot {
+.container-weight {
     width: 90%;
     height: 100%;
     background: white;
@@ -7,7 +7,7 @@
     position: absolute;
   }
   
-  .container-lot-action {
+  .container-weight-action {
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
@@ -23,16 +23,19 @@
     font-size: 24px;
   }
   
-  .lot-content {
+  .weight-content {
     width: 90%;
     margin: 0 auto;
   }
 
-  .text-field-lot {
+  .text-field-weight {
       width: 90%;
-      display: flex;
   }
   
+  .text-fields {
+      display: flex;
+      width: 100%;
+  }
   
   
   
